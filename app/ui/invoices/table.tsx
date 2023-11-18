@@ -12,10 +12,12 @@ export default async function InvoicesTable({
   currentPage: number;
 }) {
   const invoices = await fetchFilteredInvoices(query, currentPage);
+  // ...
   <td className="flex justify-end gap-2 whitespace-nowrap px-6 py-4 text-sm">
-    <UpdateInvoice id={invoice.id} />
-    <DeleteInvoice id={invoice.id} />
+    <UpdateInvoice id={invoices.id} />
+    <DeleteInvoice id={invoices.id} />
   </td>;
+  // ...
 
   return (
     <div className="mt-6 flow-root">
